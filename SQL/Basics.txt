@@ -9,3 +9,24 @@ USE <databse_name>;
 
 SELECT database();  ---> shows the currently used dbs
 
+INT ---> to store whole number
+
+varchar --> variable length string
+when we use varchar we store max length in paranthesis eg. varchar(100)
+
+CREATE TABLE tbl_name(
+       column_name data_type,          ---> column_name are the headers name of columns
+       column_name data_type
+       );
+       
+       
+SHOW TABLES:   ----> shows tables in ur dbs
+
+SHOW COLUMNS FROM <table_name>;
+          OR
+DESC <table_name>;
+
+
+DROP TABLE <table_name>;
+
+       
