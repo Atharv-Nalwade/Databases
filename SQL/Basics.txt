@@ -1,1 +1,11 @@
 
+show databases -----> shows the dbs in mysql server
+
+CREATE DATABASE <name>; ---> name is the variable
+
+DROP DATABASE <name>;
+
+USE <databse_name>;
+
+SELECT database();  ---> shows the currently used dbs
+
