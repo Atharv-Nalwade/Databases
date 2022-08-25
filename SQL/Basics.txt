@@ -69,6 +69,20 @@ create table cats2(
     -> name VARCHAR(100) NOT NULL,
     -> age INT NOT NULL);
     
+----> if we write insert cats2(name) values(xyz);  This will not give error but give warning and any random or 0 in case of num and blank in case of string will be inserted to avoid this we use default
+
+CREATE TABLE Persons (
+    ID int NOT NULL,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int,
+    City varchar(255) DEFAULT 'Sandnes'
+); 
+-----> here if no value is given for city the dault value is given there
+-----> now even if you add balnk value sin table the default will be given
+-----> we can manually set something as null but if not null constraint is given then we cannot make it null by manually inserting null
+    
+    
     
 
        
