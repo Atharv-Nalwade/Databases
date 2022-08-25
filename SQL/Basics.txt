@@ -83,6 +83,26 @@ CREATE TABLE Persons (
 -----> we can manually set something as null but if not null constraint is given then we cannot make it null by manually inserting null
     
     
+Primary Key helps to uniquely identify a row
+Primary keys must contain UNIQUE values, and cannot contain NULL values.
+A table can have only ONE primary key; and in the table, this primary key can consist of single or multiple columns (fields)
+
+----> AUTO_INCREMENT allows a unique number to be generated every time we add record to db by default it srats at 1 and incrs by 1 each time
+      To let the AUTO_INCREMENT sequence start with another value, use the following SQL statement:
+      ALTER TABLE tbl_name AUTO_INCREMENT=100; //val
+      
+      
+The MS SQL Server uses the IDENTITY keyword to perform an auto-increment feature.
+so IDENTITY(1,1)
+In the example above, the starting value for IDENTITY is 1, and it will increment by 1 for each new record. 
+
+While creating table make something as auto incr
+ create table cats3(
+    -> catId INT PRIMARY KEY AUTO_INCREMENT,
+    
+--> After making auto incr we can omit inserting the primary key and insert only names it automatically inserts names with pk start from1 and incr by 1    
+      
+      
     
 
        
