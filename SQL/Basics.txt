@@ -29,4 +29,46 @@ DESC <table_name>;
 
 DROP TABLE <table_name>;
 
+INSERT INTO table_name (column1, column2, column3, ...)
+VALUES (value1, value2, value3, ...);           
+-----> here we specify table_name where we wish to add our data also the columns of the table where we wish to add our data and then the values where we wish to add them if we want to insert data in all columns then skip the columns name
+-----> here the data is isnerted depending on the way we have specified column names
+
+
+
+INSERT INTO table_name
+VALUES (value1, value2, value3, ...);
+------> If you are adding values for all the columns of the table, you do not need to specify the column names in the SQL query. However, make sure the order of the values is in the same order as the columns in the table. 
+
+
+INSERT INTO table_name 
+            (column_name, column_name) 
+VALUES      (value, value), 
+            (value, value), 
+            (value, value);
+---------------> Multiple insert
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+If you're wondering how to insert a string (VARCHAR) value that contains quotations, then here's how.
+
+You can do it a couple of ways:
+
+Escape the quotes with a backslash: "This text has \"quotes\" in it" or 'This text has \'quotes\' in it'
+
+Alternate single and double quotes: "This text has 'quotes' in it" or 'This text has "quotes" in it'
+
+
+The solution is to run the following command in your mysql shell: set sql_mode=''
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+SHOW WARNINGS; ------> shows the warnings imp
+
+NOT NUll ---> means it is not permitted to be empty  wrte it after the column name its type while creating the table
+
+create table cats2(
+    -> name VARCHAR(100) NOT NULL,
+    -> age INT NOT NULL);
+    
+    
+
        
