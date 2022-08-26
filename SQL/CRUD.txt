@@ -1,1 +1,35 @@
 
+SELECT col1,col2 FROM tabl_name;   ---> returns only specific col specified
+
+
+SELECT name from tbl_name where name="xyz";
+The WHERE clause is used to filter records.
+It is used to extract only those records that fulfill a specified condition
+this is case insensitive
+
+ALIASES
+While displaying data if we want to display some column name as some other name then we use aliases;
+eg. 
+    SELECT name AS CAT_ID, breed from cats;   ---> here after displaying data the column name is shown as CAT_ID instead of name as in original specification while                                                          creating table
+    
+    for alias with a space 
+    SELECT name AS "CATS NAME", breed FROM cats;
+
+
+UPDATE
+ TO update existing info in the table
+ UPDATE <tbl_name> set <List of things which you want to modify or change> where <condition is matched>
+Eg.     UPDATE cats SET breed="Changed" where age=14;
+
+DELETE 
+ to delete existing records from table
+ DELETE FROM <tbl_name> where  condition
+ Eg. DELTE FROM cats where name="xyz';
+ 
+ ---->The WHERE clause specifies which record(s) should be deleted. If you omit the WHERE clause, all records in the table will be deleted!
+      Eg. DELETE FROM cats;
+          This will del all enr=tries from tha table the cats table exists with no records in it
+
+
+
+ 
