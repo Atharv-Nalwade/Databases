@@ -1,0 +1,3 @@
+SELECT DISTINCT col1,col2  from tbl_name;
+----> Returns only distinct values
+----> its selects unique rows so if select distinct fname,lname from books then it returns only distinct rows with diff names or also it might happen that fname is same and l name is diff 
