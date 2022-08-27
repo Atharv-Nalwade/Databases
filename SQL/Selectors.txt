@@ -1,3 +1,24 @@
-SELECT DISTINCT col1,col2  from tbl_name;
+DISTINCT
+---->SELECT DISTINCT col1,col2  from tbl_name;
 ----> Returns only distinct values
-----> its selects unique rows so if select distinct fname,lname from books then it returns only distinct rows with diff names or also it might happen that fname is same and l name is diff 
+----> its selects unique rows so if select distinct fname,lname from books then it returns only distinct rows with diff names or also it might happen that fname is same       and l name is diff 
+----> IT COMES RIGHT AFTER SELECT.
+
+ORDER BY
+---> SELECT col1,col2 FROM books ORDER BY <a_field_in_tbl>
+---> By default the orderinfg is in asecnding to make it descending use DESC after the field at end
+---> Numbers come before words
+---> we can select multiple columns and order them by any one of them select name,title,age from tbl order by age; === willd isplay all data which will be oredered by        age
+---> select name,title,age from tbl order by 3;  === # stands for the 3rd paar i.e age here
+---> select lname,fname from books order by lname,fname ---> this sorts the data by lname and if two lnames are same then the sorting is done by fname IMP
+
+
+LIMIT
+---> limits the number of results we see
+---> select title from books limit 2 ---> show top2 title in  the order of insertion
+---> use with order by
+---> select title from books order by released_year desc limit 5;
+---> limit is number of rows to be displayed while offset is number of rows to be skipped before starting the displaying part offset rows are first skipped then limit 
+     starts acting
+--->select title from books order by released_year limit 5 offset 1; here first order by happend then 1st row is skipped and next 5 are shown
+---> to retrive all rows after a  certain offse4t we can use a very big number as 2nd para
