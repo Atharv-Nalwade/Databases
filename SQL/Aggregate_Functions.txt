@@ -1,0 +1,11 @@
+COUNT
+---> The COUNT() function returns the number of records returned by a select query.
+--->Note: NULL values are not counted.
+---> To count distinct entries we use COUNT( DISTINCT xyz)
+---> SELECT COUNT(DISTINCT author_fname,author_lname) from books this tells us no .o fsitinct rows with distinct fname and lname
+
+GROUP BY
+----> Group by create group of all rows with same value of passed col_name into a single row eg. fow a db with studnets which took various subjects we can create group 
+      of a particular subject i.e if combines all entries into a sinle row and if count applied on it show sthe number of entries into the single group
+----> Group by groups based on rows which have sanme value of passed col_name
+----> group by author_lname,author_fname groups rows where both author_lname and author_fname have same value
