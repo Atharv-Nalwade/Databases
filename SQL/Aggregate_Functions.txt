@@ -9,3 +9,13 @@ GROUP BY
       of a particular subject i.e if combines all entries into a sinle row and if count applied on it show sthe number of entries into the single group
 ----> Group by groups based on rows which have sanme value of passed col_name
 ----> group by author_lname,author_fname groups rows where both author_lname and author_fname have same value
+----> It aggregates or summarizes identical data into same row
+----> COUNT(*) with grooup by shows how many rows have been grouped together
+
+MIN AND MAX
+----> SELECT MIN/MAX(column_name)  the condition is optional
+      FROM table_name
+      WHERE condition;
+----> Select min(pages) from books;  selects min pages from table
+----> select max(pages), title from books does not show us the books with max pages it gives wrong result;
+      
