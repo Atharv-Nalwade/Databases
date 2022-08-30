@@ -1,0 +1,22 @@
+-- CHAR is used for fixed lengths 
+--- we specify size while creating eg. char(5) truncates anyhting more than size 5
+
+DECIMAL(x,y)
+--- x is total max length of digites we can store and y is number of digits after decimal eg. decimal(5,2) is 999.99 5 in total and 2 after decimal
+--- if we insert whole number then it will stored as dec=imal with y zeros after decimal point
+--- storing more than x changes value and makes it max valuw of x digits fro 3 it woould be 99.9 and kind of
+-- It rounds up
+
+Decimal has more precison that float while float takes less space than decimal
+
+DATE
+-- YYYY/MM/DD
+
+TIME
+-- Stores time H/M/S 
+
+DATETIME stores both date and time ---> Eg. insert into trying values ("24:12:19","2022-08-12","2022-08-12 20:12:19");
+
+curdate() gives current date
+curtime() gives current time
+now() gives current datetime
