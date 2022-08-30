@@ -20,3 +20,35 @@ DATETIME stores both date and time ---> Eg. insert into trying values ("24:12:19
 curdate() gives current date
 curtime() gives current time
 now() gives current datetime
+
+DAY(date) returns only date in number 
+DAYNAME(day) returns monday,tue,wed....
+DAYOFWEEK(day) sunday=1
+DAYOFYEAR() day of the whole year
+MONTH() returns month in number
+MONTHNAME()
+HOUR(), MINUTE(), 
+
+DATEFORMAT(date,format)
+----> format has specifier look in docs ---               
+      https://www.w3schools.com/sql/func_mysql_date_format.asp
+---->select DATE_FORMAT(curdate(),"%W %M %Y"); ---> the space in between makes space in result        if other char then that would be printed
+       +-----------------------------------+
+       | DATE_FORMAT(curdate(),"%W %M %Y") |
+       +-----------------------------------+
+       | Tuesday August 2022               |
+       +-----------------------------------+
+       
+
+DATEDIFF(expr1, expr2)
+---> returns expr1-expr2 returns number of dates in between those two
+
+DATE_ADD(date INTERVAL 'xyz' something) SELECT DATE_ADD(birthdate, INTERVAL 1 MONTH)
+DATE_SUB()
+
+CREATE TABLE comments{
+content VARCHAR(100),
+created_at TIMESTAMP DEFAULT now() ):
+}
+
+ON UPDATE TIMESTAMP
