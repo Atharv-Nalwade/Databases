@@ -21,3 +21,15 @@ MIN AND MAX
 ----> One way of fixing this to do                    select * from books where pages=(select max(pages) from books);
 ----> Or to use order by limit 1
       
+      
+SUM
+---->SELECT SUM(column_name)
+     FROM table_name
+     WHERE condition;
+---->select author_fname,author_lname, sum(pages) as summed from books group by author_fname,author_lname;
+
+AVG
+---->SELECT AVG(column_name)
+     FROM table_name
+     WHERE condition;
+     
