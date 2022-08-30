@@ -18,4 +18,6 @@ MIN AND MAX
       WHERE condition;
 ----> Select min(pages) from books;  selects min pages from table
 ----> select max(pages), title from books does not show us the books with max pages it gives wrong result;
+----> One way of fixing this to do                    select * from books where pages=(select max(pages) from books);
+----> Or to use order by limit 1
       
