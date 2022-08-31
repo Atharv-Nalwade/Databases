@@ -1,0 +1,77 @@
+!=  NOT EQUAL is opposite of =
+
+NOT LIKE is opposite of LIKE
+SELECT * FROM books WHERE name not like "W%";  ---> select all books that do not start from W
+
+Greater Than >
+             >= equal too also
+             
+Less than <
+          <= equal too also
+          
+          
+AND = && gives only if both condition are true
+
+OR = || 
+
+BETWEEEN x AND y
+---  Select tile from books where released_year BETWEEN 2004 AND 2005 ;
+--- select title from books where released_year between 2001 and 2010;
+
+NOT BETWEEN x and y
+
+CAST( x AS data_type_desired) ---> converst one data type to another
+
+IN
+--- The IN operator allows you to specify multiple values in a WHERE clause.
+
+--- The IN operator is a shorthand for multiple OR conditions.
+
+--- SELECT column_name(s)
+    FROM table_name
+    WHERE column_name IN (value1, value2, ...);
+
+
+NOT IN
+--- Opposite of IN
+
+% operator
+
+---SELECT title, released_year FROM books
+   WHERE released_year >= 2000
+   AND released_year NOT IN 
+   (2000,2002,2004,2006,2008,2010,2012,2014,2016);
+ 
+   SELECT title, released_year FROM books
+   WHERE released_year >= 2000 AND
+   released_year % 2 != 0;
+
+
+
+CASE
+
+---   CASE
+          WHEN condition1 THEN result1
+          WHEN condition2 THEN result2
+          WHEN conditionN THEN resultN
+          ELSE result
+      END;
+      
+ --- SELECT OrderID, Quantity,
+      CASE
+          WHEN Quantity > 30 THEN 'The quantity is greater than 30'
+          WHEN Quantity = 30 THEN 'The quantity is 30'
+          ELSE 'The quantity is under 30'
+      END AS QuantityText
+      FROM OrderDetails;     
+      THEN is just deisplay that because its in select statement not after from
+      
+      select title,
+       CASE
+       WHEN released_year%2=0 THEN "EVEN"
+       ELSE "ODD"
+      END AS "ALIAS NAME"
+       from books;
+       
+       
+      
