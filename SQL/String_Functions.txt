@@ -43,5 +43,5 @@ UPPER("Str")
 ---> returns str with all caps
 
 LOWWER("STR");
-----> all lowercase
+---->all lowercase
               
