@@ -138,11 +138,21 @@ INNER JOIN
          SELECT column_name(s)
          FROM table1
          INNER JOIN table2
-         ON table1.column_name = table2.column_name;
+         ON table1.column_name = table2.column_name;   On refers to the condition on which join is to be made
          SQL INNER JOIN
 
  ---  Select all the data wher ethe join condition is met 
  --- if set a and set b the inner join is intersection of two sets
- 
+ --- Select all records from a and b where the join condition is met
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+IFNULL( X, Y) it takes two arguments X is the thing that is checked to be if it is null and second is what values is should be replaced if found null
+IFNULL( SUM(sal) , 0 ) if sum(sal) is found to be null then  replace it with 0 
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+LEFT JOIN
+
+--- Consider two sets A and B
+-- Select everything from A set along with matching records from set b if set b has no values a record in set a then it will seen as NULL at that place
+
 
