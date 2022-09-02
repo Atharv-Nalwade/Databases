@@ -20,6 +20,11 @@ FOREIGN KEY
                   INSERT INTO orders (order_date, amount, customer_id)
                   VALUES ('2016/06/06', 33.67, 98);
                   
+      ******************************************************************************************************************************************************            
+      -- Similary if we try to delete a record from parent table it wont be allowed as someone is dependent on that table   
+         So to do something like delete all records with some parameter from the child table on deleting the key from parent table use ON DELETE CASCADE in
+         child table after saying foreign key refrences... ON DELETE CASCADE
+                  
                   
  
  CROSS JOIN 
@@ -155,4 +160,17 @@ LEFT JOIN
 --- Consider two sets A and B
 -- Select everything from A set along with matching records from set b if set b has no values a record in set a then it will seen as NULL at that place
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+RIGHT JOIN
+--- Consider set a and set b
+--- Select everything from set b along with set a
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+https://dataschool.com/how-to-teach-people-sql/left-right-join-animated/
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+IFNULL( exp or attr , alternate_val)  --> if exp or attr is equated to null then replace it with alternate_value;
