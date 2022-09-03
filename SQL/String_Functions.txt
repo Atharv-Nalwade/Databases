@@ -25,6 +25,7 @@ CONCAT();
  
  
  REPLACE()
+ ---> ************** CAN BE USED FOR INETEGER ALSO *****************************************
  ----> This replaces all occurences of from_str but it is case sensitive
  --->REPLACE(str,from_str,to_str)
  --->Returns the string str with all occurrences of the string from_str replaced by the string to_str. REPLACE() performs a case-sensitive match when searching for            from_str.
