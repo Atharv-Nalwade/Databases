@@ -30,3 +30,117 @@ when the mysql-ctl code is run, in essence you are connecting and requesting to 
 the server to open the command line interface (which is basically a terminal or command prompt) through which to specify the SQL commands
 
 
+// Connect to Database*
+      var mysql = require('mysql');
+ 
+      var connection = mysql.createConnection({
+        host     : 'localhost',
+        user     : 'root',     // your root username
+        database : 'join_us'   // the name of your db
+      });
+
+
+/// Using the MySQL Node Package:
+
+        connection.query('SELECT 1 + 1 AS solution', function (error, results, fields) {   // eere error var will have any erros if any  results has the result if succesfully executed 
+           if (error) throw error;
+           console.log('The solution is: ', results[0].solution);  results is an array nd it is RowDataPacket so we can select wit wit indexing here .solution only                                                                         gives us the result of the query as the alias is solution  RowDataPacket { '4+1': 5, 'now()': 2022-                                                                     09-09T18:08:10.000Z } to select only trhe rhs of ":" use alias and results[i].alias_name
+        });
+
+
+// Closing the connection
+   If connection is not closed then we will not be able to execute other process hence use connection_var.end()
+   
+ 
+ 
+//To SELECT all users from database:
+      var q = 'SELECT * FROM users ';
+      connection.query(q, function (error, results, fields) {
+        if (error) throw error;
+        console.log(results);
+      });
+
+
+// To count the number of users in the database:
+          var q = 'SELECT COUNT(*) AS total FROM users ';
+          connection.query(q, function (error, results, fields) {
+            if (error) throw error;
+            console.log(results[0].total);
+          }) 
+          
+          
+ // Inserting one user in db
+              let r="INSERT INTO users (email) VALUES ('rusty_the_dog@gmail.com')";
+          connection_var.query(r, function(res,err){
+            if(err) throw err;
+            console.log(res);
+          } );
+          
+          An ok packet is received on succesful transmission 
+          OkPacket {
+          fieldCount: 0,
+          affectedRows: 1,
+          insertId: 0,
+          serverStatus: 2,
+          warningCount: 0,
+          message: '',
+          protocol41: true,
+          changedRows: 0
+        }
+          
+// About ? 
+   In some statements, parameters are unknown when the statement is prepared because a different value can be inserted each time the statement is executed. In these      statements, you can use a question-mark ( ? ) placeholder where a parameter must be supplied when the statement is executed.
+   
+   
+   
+   
+ // Inserting Data Using Node
+                  Approach #1
+
+                  var q = 'INSERT INTO users (email) VALUES ("rusty_the_dog@gmail.com")';
+
+                  connection.query(q, function (error, results, fields) {
+                    if (error) throw error;
+                    console.log(results);
+                  });
+
+
+
+                  An easier approach that allows for dynamic data
+                  var person = {
+                      email: faker.internet.email(),
+                      created_at: faker.date.past()
+                  };
+
+                  var end_result = connection.query('INSERT INTO users SET ?', person, function(err, result) {
+                    if (err) throw err;
+                    console.log(result);
+                  });
+
+
+  // Im mysql insert faker date is not allowed because of the formar but mysqljs takes care of that as dateStrings: Force date types (TIMESTAMP, DATETIME, DATE) to be      returned as strings rather than inflated into JavaScript Date objects
+     so faker date insertde using nodejs inserts coprrectly in mysql
+     
+  //
+      var persons={
+                    email=faker.internet.email(),
+                    created_at=faker.date.past()
+                   };
+                                                             gives {
+                                                    email: 'Harrison.Orn84@gmail.com',
+                                                    created_at: 2021-12-24T22:27:48.532Z
+                                                  } 
+      this date format is not valid in sql
+      
+      but on doing this 
+              var end_result=connection_var.query("insert into users set ?",persons, function(err,res){
+                if(err) throw err;
+                console.log(res);
+              } );
+              console.log(end_result.sql);  ---> .sql but in sql format
+              
+              we get---> insert into users set `email` = 'Joey61@yahoo.com', `created_at` = '2022-02-15 14:21:29.894'
+              
+              the intermediate conversion is doen by mysqljs lib
+                   
+                   
