@@ -1,0 +1,32 @@
+// Install Faker via command line:
+npm install @faker-js/faker --save-dev
+
+
+// Require it inside of a JS file:
+const { faker } = require('@faker-js/faker'); 
+
+
+// Print a random email
+console.log(faker.internet.email());
+
+// Print a random past date
+console.log(faker.date.past());  ---> in date format
+console.log(faker.date.past().toString());  ---> in words format
+
+
+// Print a random city
+console.log(faker.address.city()); 
+
+
+// We can define a new function
+function generateAddress(){
+  console.log(faker.address.streetAddress());
+  console.log(faker.address.city());
+  console.log(faker.address.state());
+}
+generateAddress();
+
+when the mysql-ctl code is run, in essence you are connecting and requesting to speak to the server on which MySQL is installed? Thereafter, with cli you are requesting 
+the server to open the command line interface (which is basically a terminal or command prompt) through which to specify the SQL commands
+
+
