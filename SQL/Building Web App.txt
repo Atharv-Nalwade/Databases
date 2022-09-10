@@ -4,3 +4,49 @@
 
 // Callback is the code that runs only afetr a sepecific thing happens
 
+// Our First Simple Web App:
+
+            var express = require('express');
+
+            var app = express();  ---> Calls the express function "express()" and puts new Express application inside the app variable (to start a new Express                                                  application). It's something like you are creating an object of a class. Where "express()" is just like class and app is it's                                             newly created object.
+
+            app.get("/", function(req, res){    ---> / is home route so when we enter home route it will send a get req to server and we well respond it with send method                                                        and say the string or anyelse 
+             res.send("HELLO FROM OUR WEB APP!");
+            });
+
+            app.listen(8080, function () {
+             console.log('App listening on port 8080!');    ---> to listen on port
+            });
+            
+            
+          
+ 
+// Adding multiple routes
+                           ----------  Add a /joke route--------------
+                              app.get("/joke", function(req, res){
+                              var joke = "What do you call a dog that does magic tricks? A labracadabrador.";
+                              res.send(joke);
+                             });
+
+
+                           --------- Add a /random_num route -----------
+                                     
+                                       app.get("/random_num", function(req, res){
+                                       var num = Math.floor((Math.random() * 10) + 1);
+                                       res.send("Your lucky number is " + num);
+                                      });
+                                      
+                                      
+ //Connecting Express and MySQL
+                      -----  Add the MySQL code inside of the root route------------
+
+                            app.get("/", function(req, res){
+                             var q = 'SELECT COUNT(*) as count FROM users';
+                             connection.query(q, function (error, results) {
+                             if (error) throw error;
+                             var msg = "We have " + results[0].count + " users";
+                             res.send(msg);
+                             });
+                            });   
+                            
+                            The raesonw e write res.send() INSIDE THE QUERY() is as it i scallback that function mkae take time to excute so to ensure the res.send                               works only after the query has finished execution so we write it inside wury or it may happen the res.send() happens earlier than query has done
