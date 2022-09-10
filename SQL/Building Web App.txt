@@ -49,4 +49,4 @@
                              });
                             });   
                             
-                            The raesonw e write res.send() INSIDE THE QUERY() is as it i scallback that function mkae take time to excute so to ensure the res.send                               works only after the query has finished execution so we write it inside wury or it may happen the res.send() happens earlier than query has done
+                            The raesonw e write res.send() INSIDE THE QUERY() is as it i scallback that function mkae take time to excute so to ensure the res.send                               works only after the query has finished execution so we write it inside wury or it may happen the res.send() happens earlier than query has                              done
