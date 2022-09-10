@@ -91,6 +91,14 @@ the server to open the command line interface (which is basically a terminal or 
 // About ? 
    In some statements, parameters are unknown when the statement is prepared because a different value can be inserted each time the statement is executed. In these      statements, you can use a question-mark ( ? ) placeholder where a parameter must be supplied when the statement is executed.
    
+             ? is a placeholder. It gets replaced with all the keys and values in the object passed as the next argument. So if you have
+
+            let r = {col1: 1, col2: "abc", col3: 999};
+            the query will become
+
+            insert into users set col1 = 1, col2 = 'abc', col3 = 999
+
+
    
    
    
@@ -144,3 +152,38 @@ the server to open the command line interface (which is basically a terminal or 
               the intermediate conversion is doen by mysqljs lib
                    
                    
+// Bulk Insering in nodejs, mysql
+      MY WAY
+                           for(let i=0;i<500;i++) {
+                            		let r={ email:faker.internet.email(),
+                            	    created_at:faker.date.past()} ;
+                            		connection_var.query("insert into users set ?",r, function(err,res){
+                            	if(err) throw err;
+                            	console.log(res);
+                            } );
+                           	}
+                            
+                            
+       Colt Way---- Bulk insert is possible using nested arrays
+       
+       
+                                  var data = [];
+                                  for(var i = 0; i < 500; i++){
+                                      data.push([
+                                          faker.internet.email(),
+                                          faker.date.past()
+                                      ]);
+                                  }
+
+
+                                  var q = 'INSERT INTO users (email, created_at) VALUES ?';
+
+                                  connection.query(q, [data], function(err, result) {
+                                    console.log(err);
+                                    console.log(result);
+                                  });
+                                  
+                                  
+                                  
+     // DATE FORMAT
+           DATE_FORMAT(MIN(created_at), "%M %D %Y") as earliest_date   ---> Imp syntax                             
