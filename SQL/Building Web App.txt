@@ -1,0 +1,6 @@
+//  npm init acts as a log file where we have a record of all packkages we have installed along with there versions
+
+// What is the meaning of –save for NPM install ? NPM (Node Package Manager) is the default package manager employed in JavaScript runtime environment in Node.js. It has a very frequently used command npm install [Package Name] –save.
+
+// Callback is the code that runs only afetr a sepecific thing happens
+
