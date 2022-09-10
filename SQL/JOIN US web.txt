@@ -187,3 +187,117 @@ the server to open the command line interface (which is basically a terminal or 
                                   
      // DATE FORMAT
            DATE_FORMAT(MIN(created_at), "%M %D %Y") as earliest_date   ---> Imp syntax                             
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+const { faker } = require('@faker-js/faker');
+
+const  mysql = require('mysql');
+
+var connection_var= mysql.createConnection({
+  host : 'localhost',
+  user : 'root',
+  database : 'join_us'
+	
+});
+console.log("done");
+
+var q="select 4+1, now() ";
+
+// connection_var.query("select now() as answer", function (err,res){
+// 					 console.log(res[0].answer);
+	
+// });
+// console.log(faker.name.fullName());
+
+// console.log(faker.date.past().toString());
+
+//   Root User: root
+   // Database Name: mysql
+
+// connection_var.query(q, function (err,res){
+// 					 console.log(res[0]);
+// 	connection_var.end();
+// });
+
+// connection_var.query("select *  from users as ans" , function (err,res) {
+// 	if(err) throw err;                              ------------> gives Katie34@yahoo.com i.e 2nd user
+// 	console.log(res[0].email);
+// });
+
+//  connection_var.query("select count(*) as total from users  " , function (err,res) {
+// 	if(err) throw err;                           
+// 	console.log(res[0].total) ;
+// });
+
+// let r={ email:faker.internet.email(),
+// 	    created_at:faker.date.past()} ;
+
+
+// 	for(let i=0;i<500;i++) {
+// 		let r={ email:faker.internet.email(),
+// 	    created_at:faker.date.past()} ;
+// 		connection_var.query("insert into users set ?",r, function(err,res){
+// 	if(err) throw err;
+// 	console.log(res);
+// } );
+//	}
+// connection_var.query("insert into users set ?",r, function(err,res){
+// 	if(err) throw err;
+// 	console.log(res);
+// } );
+	
+// 	var persons={
+//                     email:faker.internet.email(),
+//                     created_at:faker.date.past()
+//                    };
+
+// console.log(persons);
+
+// var end_result=connection_var.query("insert into users set ?",persons, function(err,res){
+// 	if(err) throw err;
+// 	console.log(res);
+// } );
+// console.log(end_result.sql);
+
+
+// BULK INSERTION
+// let values=[];
+// for(let i=0;i<500;i++){
+// values.push([
+// 	faker.internet.email(),
+// 	faker.date.past()
+// ]);
+// }
+
+
+// connection_var.query("insert into users(email,created_at) values ? ",[values], function(err,res){
+// 	if(err) throw err;
+// 	console.log(res);
+// });
+
+
+// Find earliest date in db
+   //var end_res=connection_var.query("select min(created_at) as ans from users", (err,res) => console.log(res[0].ans));
+
+//Find user with email earliest in db
+  // var q="select * from users where created_at=(select min(created_at) from users)";
+  // connection_var.query(q,(ee,res) => console.log(res[0]));
+
+// find number of users group by mont_name
+//    var q="select monthname(created_at), count(*) from users group by monthname(created_at)"
+//    connection_var.query(q,(ee,res) => console.log(res[0]));
+
+
+// connection_var.end();
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
