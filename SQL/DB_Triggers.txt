@@ -1,2 +1,17 @@
-SQl statements that are automatically runned when an table is changed
+SQl statements that are automatically runned when an table is changed are d triggers  --- Mostly used for validations
 
+// syntax
+      CREATE TRIGGER trigger_name
+      trigger_time trigger_event ON tabl_name FOR EACH ROW
+      BEGIN
+      ...
+      END
+      
+     
+     trigger_time         Before, After
+     trigger_event        INSERT,UPDATE,DELETE
+
+
+https://www.youtube.com/c/techTFQ/videos                                   
+                                                                             GOOD RESOURCES
+https://www.youtube.com/channel/UCfGTc8zyBjCGg-Ilc4oAxEg/videos
