@@ -60,3 +60,9 @@
    // <%= xyz %> is placeholder in ejs it means the data obver here is ttobe replaced by something else usalyy given along with render statement in .js file its like 
       res.render(desired_file, {ejs_var_in_ther_file:var_to_be_passed_from_this_file});
    
+   // GET is used to request data from a specified resource.
+   
+   // POST is used to send data to a server to create/update a resource.
+       The data sent to the server with POST is stored in the request body of the HTTP request:
+       
+   // in ejs from method is post and the action teels where it is to be sent after submitting info and we specify that as register and hece info is sent to regisetr and in js file we wrte post route for /register which is triggered only whgen a post requested is received n register route    
