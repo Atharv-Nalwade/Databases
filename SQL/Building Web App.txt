@@ -65,4 +65,17 @@
    // POST is used to send data to a server to create/update a resource.
        The data sent to the server with POST is stored in the request body of the HTTP request:
        
-   // in ejs from method is post and the action teels where it is to be sent after submitting info and we specify that as register and hece info is sent to regisetr and in js file we wrte post route for /register which is triggered only whgen a post requested is received n register route    
+   // in ejs from method is post and the action teels where it is to be sent after submitting info and we specify that as register and hece info is sent to regisetr and in js file we wrte post route for /register which is triggered only whgen a post requested is received n register route  
+   
+   
+   //                    app.post('/register', function(req,res){
+                         var person = {email: req.body.email};
+                         connection.query('INSERT INTO users SET ?', person, function(err, result) {
+                         console.log(err);
+                         console.log(result);
+                         res.redirect("/");
+                         });
+                        });
+                        
+                        
+     // Unsuccesful insertion is yet to be handled                   
