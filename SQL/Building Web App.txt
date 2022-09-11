@@ -50,3 +50,13 @@
                             });   
                             
                             The raesonw e write res.send() INSIDE THE QUERY() is as it i scallback that function mkae take time to excute so to ensure the res.send                               works only after the query has finished execution so we write it inside wury or it may happen the res.send() happens earlier than query has                              done
+                            
+                            
+                            
+   // The view engine is responsible for creating HTML from your views. Views are usually some kind of mixup of HTML and a programming language
+   
+   // The res.render() function is used to render a view and sends the rendered HTML string to the client.  for that create a views folder and in that add home.ejs            file andf content of that file will be rendered
+   
+   // <%= xyz %> is placeholder in ejs it means the data obver here is ttobe replaced by something else usalyy given along with render statement in .js file its like 
+      res.render(desired_file, {ejs_var_in_ther_file:var_to_be_passed_from_this_file});
+   
