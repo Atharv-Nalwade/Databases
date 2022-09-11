@@ -1,0 +1,2 @@
+SQl statements that are automatically runned when an table is changed
+
