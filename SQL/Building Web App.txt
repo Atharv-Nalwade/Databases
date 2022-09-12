@@ -78,4 +78,5 @@
                         });
                         
                         
-     // Unsuccesful insertion is yet to be handled                   
+     // Unsuccesful insertion is yet to be handled       Use flash messages for that 
+     
