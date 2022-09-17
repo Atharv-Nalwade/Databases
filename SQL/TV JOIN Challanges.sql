@@ -1,4 +1,4 @@
-Challenege 1
+//Challenege 1
           SELECT 
             title, 
             rating 
@@ -7,7 +7,7 @@ Challenege 1
             ON series.id = reviews.series_id;
 
 
-Challnege 2
+//Challnege 2
     SELECT
     title,
      AVG(rating) as avg_rating
@@ -18,7 +18,7 @@ Challnege 2
       ORDER BY avg_rating;
       
       
-Challenege 3
+//Challenege 3
       SELECT
         first_name,
         last_name,
@@ -37,7 +37,7 @@ Challenege 3
         ON reviewers.id = reviews.reviewer_id;
     
     
- Challenge 4
+ //Challenge 4
           SELECT title AS unreviewed_series
       FROM series
       LEFT JOIN reviews
@@ -48,7 +48,7 @@ Challenege 3
       
       
   
-  Challenge 5
+//  Challenge 5
            SELECT genre, 
              Round(Avg(rating), 2) AS avg_rating 
       FROM   series 
@@ -58,7 +58,7 @@ Challenege 3
       
       
  
- Challnege 6
+ //Challnege 6
      select first_name,last_name, count(*),min(rating),max(rating),avg(rating), case
      when count(*)>0 then "ACTIVE"
      else "INACTIVE"
@@ -79,7 +79,7 @@ Challenege 3
       
       
       
-  Challenge 7 -- JOIN 3 tables
+ // Challenge 7 -- JOIN 3 tables
       SELECT 
         title,
         rating,
