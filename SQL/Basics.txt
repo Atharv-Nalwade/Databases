@@ -100,6 +100,7 @@ While creating table make something as auto incr
  create table cats3(
     -> catId INT PRIMARY KEY AUTO_INCREMENT,
     
+    
 --> After making auto incr we can omit inserting the primary key and insert only names it automatically inserts names with pk start from1 and incr by 1    
       
       
